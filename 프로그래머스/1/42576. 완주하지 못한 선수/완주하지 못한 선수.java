@@ -12,10 +12,11 @@ class Solution {
             map.put(c, map.get(c) - 1);
         }
         
-        return map.entrySet().stream()
-            .filter(entry->entry.getValue() == 1)
-            .findFirst()
-            .get()
-            .getKey();
+         for (String key : map.keySet()) {
+            if (map.get(key) == 1) {
+                return key;
+            }
+        }
+        return answer;
     }
 }
